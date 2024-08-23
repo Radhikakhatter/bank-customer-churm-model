@@ -1,0 +1,47 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+df=pd.read_csv('document.getElementById('churnForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Get input values
+    const customerID = document.getElementById('customerID').value;
+    const balance = parseFloat(document.getElementById('balance').value);
+    const numOfProducts = parseInt(document.getElementById('numOfProducts').value);
+    const isActiveMember = parseInt(document.getElementById('isActiveMember').value);
+
+    // Simple prediction logic (for demonstration purposes)
+    let churnProbability = 0;
+
+    // Example logic (you can replace this with a more complex model)
+    if (balance < 5000) {
+        churnProbability += 0.4;
+    }
+    if (numOfProducts < 2) {
+        churnProbability += 0.3;
+    }
+    if (isActiveMember === 0) {
+        churnProbability += 0.5;
+    }
+
+    // Determine churn status
+    let churnStatus = churnProbability > 0.5 ? "likely to churn" : "unlikely to churn";
+
+    // Display result
+    document.getElementById('result').innerText = `Customer ID: ${customerID} is ${churnStatus}.`;
+});https://raw.githubusercontent.com/YBI-Foundation/Dataset/main/Bank%20Churn%20Modelling.csv')
+df.info()
+df.['geography'].value_counts()
+
+
+df['Num of Products'].value_counts()
+df.replace({'gender':{'Male':1,'Female':0}},inplace=True)
+df['Is Active Member'].value_counts()
+dF.LOC[df['Balence']==0].value_counts()
+df.['Zero Balance']=df['Balence'].apply(lambda x:1 if x==0 else 0)
+df['Zero Balance'].hist()
+df.['Zero Balance']=np.where(df['Balance']>0,0,1)
+df.groupby(['Zero Balance','Exited']).count()['CustomerId']
+df.groupby(['Zero Balance','Exited']).mean
+df.groupby(['Charu','Geography']).count()
